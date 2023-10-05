@@ -1000,18 +1000,16 @@
         </symbol>
       </defs>
     </svg>
-    <header class="header-elements">
-      <!-- Navigation -->
+    <header>
       <div class="container">
-        <nav class="navigation nav-line">
-          <div class="half-container">
+        <div class="header-elements nav-line">
+          <!-- Site Logo -->
+          <a class="logo-main logo" href="./index.html"
+            >Web<span id="studio">Studio</span>
+          </a>
+          <!-- Navigation -->
+          <nav class="navigation">
             <ul class="nav-list list">
-              <!-- Site Logo -->
-              <li class="nav-item">
-                <a class="logo-main logo" href="./index.html"
-                  >Web<span id="studio">Studio</span>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="./index.html" class="nav-link item current">Site</a>
               </li>
@@ -1024,24 +1022,22 @@
                 <a href="#" class="nav-link item link">Contact</a>
               </li>
             </ul>
-          </div>
-          <div class="half-container">
-            <ul class="contact-list list">
-              <li class="contact-item">
-                <a
-                  href="mailto:info@devstudio.com"
-                  class="contact-link contact link"
-                  >info@devstudio.com</a
-                >
-              </li>
-              <li class="contact-item">
-                <a href="tel:+110001111111" class="contact-link contact link"
-                  >+11 (000) 111-11-11</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
+          </nav>
+          <ul class="contact-list list">
+            <li class="contact-item">
+              <a
+                href="mailto:info@devstudio.com"
+                class="contact-link contact link"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li class="contact-item">
+              <a href="tel:+110001111111" class="contact-link contact link"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -1117,37 +1113,39 @@
       </section>
       <!-- Section Gallery -->
       <section class="section gallery">
-        <div class="container">
-          <h2 class="gallery-title section-title">What are We Doing</h2>
-          <ul class="gallery-list list">
-            <li class="gallery-item">
-              <img
-                class="gallery-image"
-                src="./images/img1.jpg"
-                alt="desktop monitor with graphs and images"
-                width="360"
-                height="300"
-              />
-            </li>
-            <li class="gallery-item">
-              <img
-                class="gallery-image"
-                src="./images/img2.jpg"
-                alt="mobile screen with different screen display"
-                width="360"
-                height="300"
-              />
-            </li>
-            <li class="gallery-item">
-              <img
-                class="gallery-image"
-                src="./images/img3.jpg"
-                alt="viewing mobile phone wih laptop on background"
-                width="360"
-                height="300"
-              />
-            </li>
-          </ul>
+        <div class="row">
+          <div class="container">
+            <h2 class="gallery-title section-title">What are We Doing</h2>
+            <ul class="gallery-list list">
+              <li class="gallery-item">
+                <img
+                  class="gallery-image"
+                  src="./images/img1.jpg"
+                  alt="desktop monitor with graphs and images"
+                  width="360"
+                  height="300"
+                />
+              </li>
+              <li class="gallery-item">
+                <img
+                  class="gallery-image"
+                  src="./images/img2.jpg"
+                  alt="mobile screen with different screen display"
+                  width="360"
+                  height="300"
+                />
+              </li>
+              <li class="gallery-item">
+                <img
+                  class="gallery-image"
+                  src="./images/img3.jpg"
+                  alt="viewing mobile phone wih laptop on background"
+                  width="360"
+                  height="300"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <!-- Section Team -->
@@ -1492,6 +1490,85 @@
               <use xlink:href="#icon-close-black-18dp-1b"></use>
             </svg>
           </a>
+          <strong class="modal-title modal-title-text"
+            >Leave your contacts and we will call you back</strong
+          >
+          <div>
+            <form class="form" autocomplete="off">
+              <div class="form-field">
+                <label for="user-name" class="form-label modal-form-label-text"
+                  >Name</label
+                >
+                <div class="form-input-overlay">
+                  <input
+                    type="text"
+                    name="user-name"
+                    id="user-name"
+                    class="form-input"
+                  />
+                  <!--
+                  <svg class="form-icon" width="18" height="18">
+                    <use
+                      href="./images/uncompressed-icons.svg#icon-person"
+                    ></use>
+                  </svg>
+                  -->
+                </div>
+              </div>
+              <!--
+            <div class="form-field">
+              <label for="user-phone-number" class="form-label">Phone</label>
+              <div class="form-input-overlay">
+                <input
+                  type="tel"
+                  name="user-phone-number"
+                  id="user-phone-number"
+                  class="form-input"
+                />
+                <svg class="form-icon" width="18" height="18">
+                  <use href="./images/uncompressed-icons.svg#icon-phone"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="user-email" class="form-label">Email</label>
+              <div class="form-input-overlay">
+                <input
+                  name="user-email"
+                  type="email"
+                  id="user-email"
+                  class="form-input"
+                />
+                <svg class="form-icon" width="18" height="18">
+                  <use href="./images/uncompressed-icons.svg#icon-email"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="user-comment" class="form-label">Comment</label>
+              <textarea
+                name="user-comment"
+                id="user-comment"
+                class="form-input comment-input"
+                placeholder="Text Input"
+              ></textarea>
+            </div>
+            <label class="agreement">
+              <input
+                name="agreement"
+                type="checkbox"
+                class="agreement-checkbox"
+              />
+              <span class="agreement-check-icon"></span>
+              <span class="agreement-label"
+                >I accept the terms and conditions of the Privacy Policy
+                <a href="" class="agreement-link">Условия договора</a></span
+              >
+            </label>
+            <button type="submit" class="btn btn-primary">Send</button>
+          -->
+            </form>
+          </div>
         </div>
       </div>
     </div>

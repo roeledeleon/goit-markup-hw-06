@@ -46,9 +46,17 @@ body {
   border: 0px;
 }
 
-.nav-link.current {
-  color: var(--highlight-nav-text-color);
-  text-decoration: none;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .link {
@@ -122,10 +130,12 @@ ul {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
 /* End of General Styles */
 
 /* HEADER Styles */
 .header-elements {
+  display: flex;
   border: none;
 }
 
@@ -146,7 +156,10 @@ ul {
 #studio-footer {
   color: var(--secondary-text-color);
 }
-
+.logo-main {
+  display: flex;
+  align-items: center;
+}
 .nav-line {
   background: var(--bg-color);
   border-bottom-width: 1px;
@@ -155,36 +168,37 @@ ul {
 }
 .navigation {
   display: flex;
-  width: 1158px;
+  flex-wrap: wrap;
 }
 .nav-list {
   display: flex;
-  margin-left: 0px;
-  vertical-align: middle;
+  margin-left: 90px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
 }
 .nav-item + .nav-item {
   margin-left: 40px;
 }
 .nav-link {
   padding-top: var(--section-item-gap);
-  padding-bottom: var(--section-item-gap);
+  padding-bottom: 20px;
 }
-.nav-link.current::after {
-  content: "";
+.nav-link.current {
+  color: var(--highlight-nav-text-color);
+  text-decoration: none;
 
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  display: block;
-  width: 100%;
-  height: 4px;
-
-  background-color: var(--accent-color);
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--IRIS);
   border-radius: 2px;
 }
-.nav-item {
-  padding-top: var(--section-item-gap);
+.nav-link.link {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--WHITE);
+  border-radius: 2px;
 }
 .nav-item a.item:hover,
 .nav-item a.item:focus {
@@ -200,15 +214,16 @@ span#studio:hover {
 
 .contact-list {
   display: flex;
-  margin-left: 0px;
-  justify-content: right;
+  margin-left: auto;
+  justify-content: left;
   align-items: center;
 }
 .contact-item + .contact-item {
   margin-left: 40px;
 }
 .contact-item {
-  padding-top: var(--section-item-gap);
+  display: flex;
+  align-items: center;
 }
 .contact-item a.contact:hover,
 .contact-item a.contact:focus {
@@ -228,6 +243,7 @@ span#studio:hover {
 /* End of HEADER Styles */
 
 /* MAIN Styles */
+
 .main {
   color: var(--WHITE);
   text-align: center;
@@ -326,9 +342,12 @@ button {
 .gallery-list {
   display: flex;
   padding-top: calc(2 * var(--section-item-gap));
+  justify-content: center;
 }
 .gallery-item {
-  flex-basis: calc((100% - 2 * var(--section-item-gap)) / 3);
+  display: inline-block;
+
+  gap: calc((100% - 2 * var(--section-item-gap)) / 3);
 }
 .gallery-item + .gallery-item {
   margin-left: var(--section-item-gap);
@@ -765,9 +784,9 @@ a.client6:hover svg.client6-icon-b {
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  padding: 8px;
-  width: 528px;
-  height: 581px;
+  padding: 4px;
+  width: 458px;
+  height: 584px;
 
   background-color: #ffffff;
   border-radius: 4px;
@@ -808,6 +827,8 @@ a.client6:hover svg.client6-icon-b {
 .modal-button-icon {
   fill: currentColor;
   transition: fill 250ms var(--timing-function);
+
+  margin-left: 0px;
 }
 svg.close-black-18dp-1a {
   display: block;
@@ -823,4 +844,77 @@ svg.close-black-18dp-1b {
   transition: background-color 250ms var(--timing-function);
   display: block;
 }
+
+.modal-title {
+  position: absolute;
+
+  top: 48px;
+  right: 36px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 360px;
+  text-align: center;
+}
+
+.modal-title-text {
+  color: var(--primary-text-color);
+  /* Body Medium */
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
+}
+
+.modal-form-label-text {
+  color: var(--LIGHT-SLATE);
+  /* Small Text */
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: 0.48px;
+}
+
+.modal .form {
+  position: absolute;
+
+  top: 88px;
+  right: 36px;
+
+  display: flex;
+  align-items: center;
+
+  width: 360px;
+}
+
+.modal .form-input {
+  display: block;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 42px;
+  margin-top: 4px;
+  width: 360px;
+  height: 40px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--OCEAN);
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border 250ms var(--timing-function);
+}
+/*
+.modal .form-field + .form-field {
+  margin-top: 10px;
+}
+
+
+*/
 /* End of MODAL Styles */
