@@ -795,7 +795,7 @@ a.client6:hover svg.client6-icon-b {
   width: 458px;
   height: 584px;
 
-  background-color: #ffffff;
+  background-color: var(--WHITE);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -851,12 +851,11 @@ svg.close-black-18dp-1b {
   transition: background-color 250ms var(--timing-function);
   display: block;
 }
-
 .modal-title {
   position: absolute;
 
   top: 48px;
-  right: 36px;
+  right: 48px;
 
   display: flex;
   justify-content: center;
@@ -888,8 +887,8 @@ svg.close-black-18dp-1b {
 
 .modal .form {
   position: absolute;
-  top: 88px;
-  right: 36px;
+  top: 80px;
+  right: 48px;
   align-items: center;
   width: 360px;
 }
@@ -939,8 +938,7 @@ svg.close-black-18dp-1b {
   top: 50%;
   left: 0;
   transform: translate(16px, -50%);
-
-  fill: black;
+  fill: var(--BLACK);
 
   transition: fill 250ms var(--timing-function);
 }
@@ -966,9 +964,9 @@ svg.close-black-18dp-1b {
 
 .agreement {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .agreement-label {
   color: var(--LIGHT-SLATE);
@@ -1008,22 +1006,39 @@ svg.close-black-18dp-1b {
   margin-left: 0px;
   width: 16px;
   height: 16px;
-
   background-color: var(--bg-color);
-  border: 1px solid #000000;
+  border: 1px solid var(--BLACK);
   border-radius: 2px;
 
   stroke-width: 1px;
   stroke: var(--NAVY-BLUE-modal);
 }
+.agreement-checkbox:checked + .agreement-check-icon {
+  background-image: url("../images/sprite/SVG/property-1-click.svg");
+
+  fill: var(--OCEAN, #404bbf);
+  stroke-width: 1px;
+  stroke: var(--OCEAN, #404bbf);
+
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .btn-modal {
+  position: absolute;
+  left: 95px;
+}
+.button-modal {
   /* layout */
   display: inline-flex;
   padding: 16px 32px;
   align-items: flex-start;
   gap: 10px;
   width: 169px;
+  justify-content: center;
   /* style */
   border-radius: 4px;
   background: var(--IRIS);
@@ -1038,14 +1053,20 @@ svg.close-black-18dp-1b {
   line-height: 24px; /* 150% */
   letter-spacing: 0.64px;
 }
+.button-modal:hover,
+.button-modal:focus {
+  /* layout */
+  display: inline-flex;
+  padding: 16px 32px;
+  align-items: flex-start;
+  gap: 10px;
+  width: 169px;
+  justify-content: center;
 
-/*
-.agreement-checkbox:checked + .agreement-check-icon {
-  background-image: url('../images/check.svg');
-  background-color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-*/
+  border-radius: 4px;
+  background: var(--OCEAN);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: fill 250ms var(--timing-function);
+}
+
 /* End of MODAL Styles */
