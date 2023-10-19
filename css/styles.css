@@ -243,7 +243,6 @@ span#studio:hover {
 .contact-link {
   color: var(--bottom-text-color);
   transition: color 250ms var(--timing-function);
-
   /* Body */
   font-family: Roboto;
   font-size: 16px;
@@ -254,7 +253,6 @@ span#studio:hover {
 /* End of HEADER Styles */
 
 /* MAIN Styles */
-
 .main {
   color: var(--WHITE);
   text-align: center;
@@ -559,6 +557,7 @@ a.client6:hover svg.client6-icon-b {
   height: 100%;
   padding: 40px 32px;
   /* style */
+  opacity: 0.95;
   background-color: var(--project-overlay-bg-color);
 
   transition: transform 250ms var(--timing-function);
