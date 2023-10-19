@@ -71,6 +71,9 @@ body {
   font-weight: 600;
   line-height: 1.5; /* 150% */
   letter-spacing: 0.32px;
+
+  color: var(--primary-text-color);
+  transition: color 250ms var(--timing-function);
 }
 
 .container {
@@ -153,9 +156,11 @@ ul {
 
 #studio {
   color: var(--primary-text-color);
+  transition: color 250ms var(--timing-function);
 }
 #studio-footer {
   color: var(--secondary-text-color);
+  transition: color 250ms var(--timing-function);
 }
 .logo-main {
   display: flex;
@@ -177,45 +182,39 @@ ul {
 }
 .nav-item {
   display: flex;
-  align-items: center;
 }
 .nav-item + .nav-item {
   margin-left: 40px;
 }
 .nav-link {
   padding-top: var(--section-item-gap);
-  padding-bottom: 20px;
+  padding-bottom: var(--section-item-gap);
   text-decoration: none;
 }
 .nav-item:hover {
   color: var(--highlight-nav-text-color);
 }
-.nav-link.current {
-  border-bottom-width: 4px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--WHITE);
-  border-radius: 2px;
+.current {
+  color: var(--highlight-nav-text-color);
 }
-.nav-link.link {
-  border-bottom-width: 4px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--WHITE);
+.current::after {
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 100%;
   border-radius: 2px;
+  background-color: var(--IRIS);
+
+  position: relative;
+  top: 20px;
 }
 .nav-item a.item:hover,
 .nav-item a.item:focus {
   color: var(--highlight-nav-text-color);
-  transition: background-color 250ms var(--timing-function);
   text-decoration: none;
-
-  border-bottom-width: 4px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--IRIS);
-  border-radius: 2px;
 }
 span#studio:hover {
   color: var(--highlight-nav-text-color);
-  transition: background-color 250ms var(--timing-function);
   text-decoration: none;
 }
 
@@ -231,6 +230,9 @@ span#studio:hover {
 .contact-item {
   display: flex;
   align-items: center;
+
+  color: var(--SLATE);
+  transition: background-color 250ms var(--timing-function);
 }
 .contact-item a.contact:hover,
 .contact-item a.contact:focus {
@@ -240,6 +242,8 @@ span#studio:hover {
 }
 .contact-link {
   color: var(--bottom-text-color);
+  transition: color 250ms var(--timing-function);
+
   /* Body */
   font-family: Roboto;
   font-size: 16px;
@@ -408,22 +412,15 @@ button {
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: var(--IRIS);
   color: var(--LIGHT-SLATE);
   border-radius: 50%;
-}
-.socials-icon {
-  fill: var(--LIGHT-SLATE);
+
+  background-color: var(--IRIS);
+  transition: background-color 250ms var(--timing-function);
 }
 .socials-link:hover,
 .socials-link:focus {
-  transition: background-color 250ms var(--timing-function);
   background-color: var(--OCEAN);
-}
-.socials-link:hover .socials-icon,
-.socials-link:focus .socials-icon {
-  fill: var(--WHITE);
-  transition: background-color 250ms var(--timing-function);
 }
 
 svg.client1-icon-a,
@@ -448,7 +445,6 @@ a.client3:hover svg.client3-icon-a,
 a.client4:hover svg.client4-icon-a,
 a.client5:hover svg.client5-icon-a,
 a.client6:hover svg.client6-icon-a {
-  transition: background-color 250ms var(--timing-function);
   display: none;
 }
 a.client1:hover svg.client1-icon-b,
@@ -457,7 +453,6 @@ a.client3:hover svg.client3-icon-b,
 a.client4:hover svg.client4-icon-b,
 a.client5:hover svg.client5-icon-b,
 a.client6:hover svg.client6-icon-b {
-  transition: background-color 250ms var(--timing-function);
   display: block;
 }
 
@@ -476,22 +471,22 @@ a.client6:hover svg.client6-icon-b {
   height: 88px;
 
   color: var(--LIGHT-SLATE);
-  border: 1px solid var(--LIGHT-SLATE);
   border-radius: 4px;
+  border: 1px solid var(--LIGHT-SLATE);
+  transition: border-color 250ms var(--timing-function);
 }
 .client-icon {
   stroke: currentColor;
   fill: currentColor;
+  transition: fill 250ms var(--timing-function);
 }
 .client-link:hover,
 .client-link:focus {
   border-color: var(--OCEAN);
-  transition: background-color 250ms var(--timing-function);
 }
 .client-icon:hover {
   fill: var(--OCEAN);
   stroke: var(--OCEAN);
-  transition: background-color 250ms var(--timing-function);
 }
 /* End of MAIN Styles */
 
